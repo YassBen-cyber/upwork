@@ -1,49 +1,54 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Alexandre Dupont" />
-    <title>A. Dupont | Portfolio QA & Project Leader</title>
-    <script type="module" crossorigin src="/assets/index-D-qBd4Su.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/proxy-vl4aur_w.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-x7N-SEc-.css">
-  </head>
-  <body>
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:outline-none">Aller au contenu principal</a>
-    <div id="root"></div>
-    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-          // Initialize Lenis for smooth scrolling
-          const lenis = new Lenis({
-              duration: 1.2,
-              easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-              direction: 'vertical',
-              gestureDirection: 'vertical',
-              smooth: true,
-              mouseMultiplier: 1,
-              smoothTouch: false,
-              touchMultiplier: 2,
-          });
 
-          function raf(time) {
-              lenis.raf(time);
-              requestAnimationFrame(raf);
-          }
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Alexandre Dupont" />
+  <title>A. Dupont | Portfolio QA & Project Leader</title>
+  <script type="module" crossorigin src="./assets/index-D-qBd4Su.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/proxy-vl4aur_w.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-x7N-SEc-.css">
+</head>
 
-          requestAnimationFrame(raf);
-
-          // Anchor links for Lenis
-          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-              anchor.addEventListener('click', function (e) {
-                  e.preventDefault();
-                  lenis.scrollTo(this.getAttribute('href'));
-              });
-          });
+<body>
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:outline-none">Aller
+    au contenu principal</a>
+  <div id="root"></div>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Lenis for smooth scrolling
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
       });
-    </script>
-  </body>
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+
+      // Anchor links for Lenis
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          lenis.scrollTo(this.getAttribute('href'));
+        });
+      });
+    });
+  </script>
+</body>
+
 </html>
